@@ -1,0 +1,194 @@
+{
+  "info": {
+    "_postman_id": "4f661de6-ec58-4a4f-b77d-2bcbe0a55824",
+    "name": "Biblioteca",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25902467",
+    "_collection_link": "https://go.postman.co/collection/25902467-4f661de6-ec58-4a4f-b77d-2bcbe0a55824?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Biblioteca",
+      "item": [
+        {
+          "name": "Usuarios",
+          "item": [
+            {
+              "name": "Listar Usuarios",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/usuario",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuario"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Crear Usuarios",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nombre\":\"Juan Perez\",\r\n    \"email\":\"juan@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"rolId\":1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Libros",
+          "item": [
+            {
+              "name": "Listar Libros",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/libros",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "libros"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Crear Libros",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"titulo\": \"Spring Boot en Acción\",\r\n  \"autor\": \"Craig Walls\",\r\n  \"isbn\": \"9781617292545\",\r\n  \"categoria\": \"Programación\",\r\n  \"stock\": 10,\r\n  \"estado\": \"DISPONIBLE\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/libros",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "libros"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Prestamos",
+          "item": [
+            {
+              "name": "Registrar Prestamos",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"usuarioId\":1,\r\n    \"libroId\":1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/prestamos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "prestamos"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Buscar Prestamo",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/prestamos/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "prestamos",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Devolver Libro",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/prestamos/1/devolver",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "prestamos",
+                    "1",
+                    "devolver"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,28 @@
 spring:
   application:
     name: biblioteca
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+  datasource:
+    url: jdbc:postgresql://db.zjqpqzhxvczlirsvkbqw.supabase.co:5432/postgres
+    username: postgres
+    password: micataela2025
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+jwt:
+    secret: biblioteca-api-secreto-super-seguro-2026-para-jwt
+    expiration: 3600000
