@@ -1,5 +1,6 @@
 package com.biblioteca.biblioteca.service;
 
+import com.biblioteca.biblioteca.dto.request.UsuarioRequest;
 import com.biblioteca.biblioteca.entity.Usuario;
 
 import java.util.List;
@@ -11,10 +12,9 @@ public interface UsuarioService {
 
     Optional<Usuario> buscarPorId(Long id);
 
-    Optional<Usuario> buscarPorCorreo(String correo);
+    Usuario guardar(UsuarioRequest request);
 
-    Usuario guardar(Usuario usuario);
+    Usuario actualizar(Long id, UsuarioRequest request);
 
     void eliminar(Long id);
-
 }

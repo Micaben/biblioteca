@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 import jakarta.persistence.*;
-        import lombok.*;
+import lombok.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -81,5 +81,6 @@ public class Usuario implements UserDetails {
     public boolean isEnabled() {
         return estado;
     }
+
 
 }

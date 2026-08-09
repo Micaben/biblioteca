@@ -114,4 +114,19 @@ http://localhost:8080/swagger-ui/index.html
 La colección se encuentra en:
 
 
-postman/Biblioteca_API.postman_collection.json
+/Biblioteca.postman_collection.json
+
+## Repositorio:
+https://github.com/Micaben/biblioteca.git
+
+## Base de datos
+
+Motor: PostgreSQL - Supabase
+
+La aplicación utiliza una base de datos de prueba académica.
+
+Configuración:
+URL: jdbc:postgresql://...
+
+Usuario:
+Contraseña:

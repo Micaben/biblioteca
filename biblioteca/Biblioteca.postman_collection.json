@@ -15,31 +15,26 @@
           "item": [
             {
               "name": "Listar Usuarios",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
               "request": {
                 "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:8080/usuario",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "8080",
-                  "path": [
-                    "usuario"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Crear Usuarios",
-              "request": {
-                "method": "POST",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBiaWJsaW90ZWNhLmNvbSIsImlhdCI6MTc4NjMwNzEwMSwiZXhwIjoxNzg2MzEwNzAxfQ.JXIOhkqGxcZg1u4eg6gRDVcAonDxDr3kROPHk44S8zs",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n    \"nombre\":\"Juan Perez\",\r\n    \"email\":\"juan@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"rolId\":1\r\n}",
+                  "raw": "",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -59,6 +54,74 @@
                 }
               },
               "response": []
+            },
+            {
+              "name": "Crear Usuarios",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBiaWJsaW90ZWNhLmNvbSIsImlhdCI6MTc4NjMwMjYyMywiZXhwIjoxNzg2MzA2MjIzfQ.ZqIQ4IfZbmnWfrTOtDX3ObKg3Y2kgvz3IOiqUVzIkQc",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nombre\":\"Juan Perez\",\r\n    \"correo\":\"juanp@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"rolId\":2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/usuarios",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Iniciar sesion",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"correo\": \"admin@biblioteca.com\",\r\n  \"password\": \"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
             }
           ]
         },
@@ -69,7 +132,18 @@
               "name": "Listar Libros",
               "request": {
                 "method": "GET",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBiaWJsaW90ZWNhLmNvbSIsImlhdCI6MTc4NjMwNzEwMSwiZXhwIjoxNzg2MzEwNzAxfQ.JXIOhkqGxcZg1u4eg6gRDVcAonDxDr3kROPHk44S8zs",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
                 "url": {
                   "raw": "http://localhost:8080/libros",
                   "protocol": "http",
@@ -88,10 +162,21 @@
               "name": "Crear Libros",
               "request": {
                 "method": "POST",
-                "header": [],
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBiaWJsaW90ZWNhLmNvbSIsImlhdCI6MTc4NjMwNzEwMSwiZXhwIjoxNzg2MzEwNzAxfQ.JXIOhkqGxcZg1u4eg6gRDVcAonDxDr3kROPHk44S8zs",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n  \"titulo\": \"Spring Boot en Acción\",\r\n  \"autor\": \"Craig Walls\",\r\n  \"isbn\": \"9781617292545\",\r\n  \"categoria\": \"Programación\",\r\n  \"stock\": 10,\r\n  \"estado\": \"DISPONIBLE\"\r\n}",
+                  "raw": "{\r\n  \"titulo\": \"Diseño de Base de datos\",\r\n  \"autor\": \"Craig Walls\",\r\n  \"isbn\": \"978999399645\",\r\n  \"categoria\": \"Programación\",\r\n  \"stock\": 30,\r\n  \"estado\": \"DISPONIBLE\"\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -107,6 +192,46 @@
                   "port": "8080",
                   "path": [
                     "libros"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Actualizar Libros",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBiaWJsaW90ZWNhLmNvbSIsImlhdCI6MTc4NjMwNzEwMSwiZXhwIjoxNzg2MzEwNzAxfQ.JXIOhkqGxcZg1u4eg6gRDVcAonDxDr3kROPHk44S8zs",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"titulo\": \"Diseño de Base de datos\",\r\n  \"autor\": \"Uasn Berner\",\r\n  \"isbn\": \"978999399645\",\r\n  \"categoria\": \"Programación\",\r\n  \"stock\": 30,\r\n  \"estado\": \"DISPONIBLE\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/libros/3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "libros",
+                    "3"
                   ]
                 }
               },
